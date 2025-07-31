@@ -1,0 +1,11 @@
+.square {
+  height: 120px;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+#game {
+  width: 360px; /* 3 x 120px squares */
+}
