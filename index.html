@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-12 col-md-8 col-lg-6">
+                <!-- Game Header -->
+                <div class="text-center mb-4">
+                    <h1 class="display-4 fw-bold text-primary mb-3">
+                        <i class="bi bi-grid-3x3-gap"></i> Tic Tac Toe
+                    </h1>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body text-center py-2">
+                                    <h6 class="card-title mb-1">Player X</h6>
+                                    <h4 class="mb-0" id="scoreX">0</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card bg-success text-white">
+                                <div class="card-body text-center py-2">
+                                    <h6 class="card-title mb-1">Player O</h6>
+                                    <h4 class="mb-0" id="scoreO">0</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Status -->
+                <div class="text-center mb-4">
+                    <div class="alert alert-info" role="alert" id="gameStatus">
+                        <h5 class="mb-0">Player X's Turn</h5>
+                    </div>
+                </div>
+
+                <!-- Game Board -->
+                <div class="game-container mx-auto mb-4">
+                    <div class="game-board" id="gameBoard">
+                        <div class="game-cell" data-cell="0"></div>
+                        <div class="game-cell" data-cell="1"></div>
+                        <div class="game-cell" data-cell="2"></div>
+                        <div class="game-cell" data-cell="3"></div>
+                        <div class="game-cell" data-cell="4"></div>
+                        <div class="game-cell" data-cell="5"></div>
+                        <div class="game-cell" data-cell="6"></div>
+                        <div class="game-cell" data-cell="7"></div>
+                        <div class="game-cell" data-cell="8"></div>
+                    </div>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="text-center">
+                    <button class="btn btn-warning btn-lg me-2" id="resetGame">
+                        <i class="bi bi-arrow-clockwise"></i> Reset Game
+                    </button>
+                    <button class="btn btn-secondary btn-lg" id="resetScore">
+                        <i class="bi bi-trophy"></i> Reset Score
+                    </button>
+                </div>
+
+                <!-- Game Rules -->
+                <div class="mt-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">
+                                <i class="bi bi-info-circle"></i> How to Play
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>Players take turns placing X's and O's on the board</li>
+                                <li>First player to get 3 in a row (horizontal, vertical, or diagonal) wins</li>
+                                <li>If all 9 squares are filled without a winner, it's a tie</li>
+                                <li>Player X always goes first</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

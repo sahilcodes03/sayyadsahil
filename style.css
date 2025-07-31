@@ -1,0 +1,226 @@
+/* Custom Tic Tac Toe Styles */
+
+/* Game Container */
+.game-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    background-color: #6c757d;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 1;
+}
+
+/* Game Cells */
+.game-cell {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-cell:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-cell.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.game-cell.disabled:hover {
+    transform: none;
+    background-color: #ffffff;
+}
+
+/* Player X Styling */
+.game-cell.x {
+    color: #0d6efd;
+    animation: slideIn 0.3s ease;
+}
+
+/* Player O Styling */
+.game-cell.o {
+    color: #198754;
+    animation: slideIn 0.3s ease;
+}
+
+/* Winning Cells Animation */
+.game-cell.winning {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    animation: pulse 0.6s ease-in-out infinite alternate;
+    color: #333;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Game Status Styling */
+#gameStatus {
+    animation: fadeIn 0.5s ease;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#gameStatus.alert-success {
+    background: linear-gradient(45deg, #198754, #20c997);
+    border-color: #198754;
+    color: white;
+}
+
+#gameStatus.alert-warning {
+    background: linear-gradient(45deg, #fd7e14, #ffc107);
+    border-color: #fd7e14;
+    color: white;
+}
+
+#gameStatus.alert-info {
+    background: linear-gradient(45deg, #0d6efd, #6610f2);
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Score Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .game-cell {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .game-board {
+        gap: 6px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-cell {
+        font-size: 2rem;
+    }
+    
+    .game-board {
+        gap: 4px;
+        padding: 4px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #212529 !important;
+        color: #ffffff;
+    }
+    
+    .bg-light {
+        background-color: #212529 !important;
+    }
+    
+    .card {
+        background-color: #343a40;
+        color: #ffffff;
+    }
+    
+    .game-cell {
+        background-color: #495057;
+        color: #ffffff;
+    }
+    
+    .game-cell:hover {
+        background-color: #6c757d;
+    }
+}
+
+/* Loading animation for page load */
+.container-fluid {
+    animation: fadeIn 0.8s ease;
+}
